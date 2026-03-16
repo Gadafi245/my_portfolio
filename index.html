@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mohammed Gadafi Nuhu</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#f4f6f9;color:#1a1a2e;line-height:1.7}
+
+  /* NAV */
+  nav{position:sticky;top:0;background:#0d1b3e;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 2rem;height:56px}
+  nav .logo{color:#fff;font-weight:600;font-size:15px;letter-spacing:.5px}
+  nav ul{list-style:none;display:flex;gap:1.5rem}
+  nav ul a{color:#b0bfd8;text-decoration:none;font-size:13px;letter-spacing:.3px;transition:color .2s}
+  nav ul a:hover{color:#fff}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0d1b3e 0%,#1a3a6b 100%);padding:4rem 2rem 3rem;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .avatar{width:120px;height:120px;border-radius:50%;border:3px solid #c0392b;overflow:hidden;margin-bottom:1.25rem;background:#1e3a6e;display:flex;align-items:center;justify-content:center}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .avatar-init{font-size:36px;font-weight:700;color:#fff}
+  .hero h1{color:#fff;font-size:2rem;font-weight:700;margin-bottom:.25rem}
+  .hero h2{color:#7fa3d4;font-size:1rem;font-weight:400;margin-bottom:1.25rem;letter-spacing:.5px}
+  .badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:1.5rem}
+  .badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#c8d8ef;font-size:12px;padding:4px 12px;border-radius:20px}
+  .contact-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}
+  .contact-row a{color:#9bb8d8;font-size:13px;text-decoration:none;display:flex;align-items:center;gap:5px;transition:color .2s}
+  .contact-row a:hover{color:#fff}
+
+  /* SECTIONS */
+  section{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem}
+  .section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#c0392b;margin-bottom:.5rem}
+  .section-title{font-size:1.5rem;font-weight:700;color:#0d1b3e;margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:2px solid #e8ecf4}
+
+  /* ABOUT */
+  .about-text{font-size:15px;color:#3a3a5c;line-height:1.85}
+
+  /* EXPERIENCE */
+  .timeline{display:flex;flex-direction:column;gap:1.5rem}
+  .card{background:#fff;border-radius:10px;padding:1.25rem 1.5rem;border:1px solid #e2e8f2;transition:box-shadow .2s}
+  .card:hover{box-shadow:0 4px 18px rgba(13,27,62,.08)}
+  .card-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem;margin-bottom:.6rem}
+  .card-title{font-size:15px;font-weight:700;color:#0d1b3e}
+  .card-sub{font-size:13px;color:#c0392b;font-weight:600;margin-bottom:.4rem}
+  .card-date{font-size:12px;background:#eef2fb;color:#3a5a9a;padding:3px 10px;border-radius:20px;white-space:nowrap}
+  .card ul{padding-left:1.2rem;margin-top:.5rem}
+  .card li{font-size:13.5px;color:#4a4a6a;margin-bottom:.3rem}
+
+  /* EDUCATION */
+  .edu-grid{display:grid;gap:1.25rem}
+  .edu-card{background:#fff;border-radius:10px;padding:1.25rem 1.5rem;border-left:4px solid #0d1b3e;border-top:1px solid #e2e8f2;border-right:1px solid #e2e8f2;border-bottom:1px solid #e2e8f2}
+  .edu-degree{font-size:15px;font-weight:700;color:#0d1b3e;margin-bottom:.2rem}
+  .edu-school{font-size:13px;color:#c0392b;font-weight:600;margin-bottom:.4rem}
+  .edu-date{font-size:12px;color:#7a8aaa;margin-bottom:.5rem}
+  .edu-courses{font-size:13px;color:#5a6a8a}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}
+  .skill-pill{background:#fff;border:1px solid #dde4f0;border-radius:8px;padding:.6rem 1rem;font-size:13.5px;color:#1a1a2e;text-align:center;font-weight:500;transition:all .2s}
+  .skill-pill:hover{background:#0d1b3e;color:#fff;border-color:#0d1b3e}
+
+  /* PROJECTS */
+  .proj-card{background:#fff;border-radius:10px;padding:1.25rem 1.5rem;border:1px solid #e2e8f2;border-top:3px solid #c0392b}
+  .proj-title{font-size:15px;font-weight:700;color:#0d1b3e;margin-bottom:.3rem}
+  .proj-org{font-size:13px;color:#7a8aaa;margin-bottom:.6rem}
+  .proj-desc{font-size:13.5px;color:#4a4a6a}
+
+  /* LEADERSHIP */
+  .lead-list{display:flex;flex-direction:column;gap:.75rem}
+  .lead-item{background:#fff;border-radius:8px;padding:.85rem 1.25rem;border:1px solid #e2e8f2;display:flex;align-items:center;gap:.75rem;font-size:14px;color:#2a2a4a}
+  .lead-dot{width:10px;height:10px;border-radius:50%;background:#c0392b;flex-shrink:0}
+
+  /* FOOTER */
+  footer{background:#0d1b3e;text-align:center;padding:1.5rem;color:#6a7fa8;font-size:12px}
+
+  .dl-bar{background:#c0392b;text-align:center;padding:.6rem 1rem}
+  .dl-btn{background:#fff;color:#c0392b;border:none;padding:.45rem 1.4rem;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:.3px;transition:opacity .2s}
+  .dl-btn:hover{opacity:.85}
+  @media(max-width:600px){
+    .hero h1{font-size:1.5rem}
+    nav ul{display:none}
+    section{padding:2rem 1rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="dl-bar"><button class="dl-btn" onclick="downloadPortfolio()">&#8595; Download Portfolio (HTML)</button></div>
+<nav>
+  <div class="logo">MGN</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="avatar">
+    <span class="avatar-init">MG</span>
+  </div>
+  <h1>Mohammed Gadafi Nuhu</h1>
+  <h2>AI Research Analyst &nbsp;|&nbsp; Informatics Graduate Student &nbsp;|&nbsp; Project Manager</h2>
+  <div class="badges">
+    <span class="badge">Cloud Computing</span>
+    <span class="badge">Information Security</span>
+    <span class="badge">Data Analytics</span>
+    <span class="badge">Agile / Scrum</span>
+    <span class="badge">AI Research</span>
+  </div>
+  <div class="contact-row">
+    <a href="tel:4376062524">&#128222; 437-606-2524</a>
+    <a href="mailto:mohammedgaddafi245@gmail.com">&#9993; mohammedgaddafi245@gmail.com</a>
+    <a href="https://linkedin.com/in/mohammed-nuhu-" target="_blank">&#128279; LinkedIn</a>
+    <a>&#128205; Toronto, ON</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">Profile</div>
+  <div class="section-title">About Me</div>
+  <p class="about-text">
+    I am a graduate student in Informatics at Northeastern University's Toronto campus, specializing in cloud computing, information security management, and data analytics. With hands-on experience spanning AI research, technology evaluation, operations, and team supervision, I bring a multidisciplinary background to every challenge I tackle. I am passionate about making complex technologies understandable and accessible, and I thrive in collaborative, fast-paced environments where continuous learning is the norm.
+  </p>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Career</div>
+  <div class="section-title">Work Experience</div>
+  <div class="timeline">
+
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">AI Research / Content Analyst</div>
+          <div class="card-sub">Outliner AI &nbsp;·&nbsp; Remote</div>
+        </div>
+        <span class="card-date">Nov 2025 – Present</span>
+      </div>
+      <ul>
+        <li>Researched and analyzed emerging AI tools, platforms, and technology trends to identify solutions for professionals and businesses.</li>
+        <li>Curated and summarized AI tools and industry insights for newsletters, reports, and digital content.</li>
+        <li>Evaluated AI systems to determine use cases, performance benchmarks, and productivity benefits.</li>
+        <li>Created structured outlines and summaries that simplify complex AI concepts for broad audiences.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Onsite Assistant</div>
+          <div class="card-sub">Radiant Sole</div>
+        </div>
+        <span class="card-date">Sep 2024 – Oct 2025</span>
+      </div>
+      <ul>
+        <li>Assisted with daily on-site operations ensuring smooth coordination between staff and clients.</li>
+        <li>Addressed customer concerns and provided timely problem resolution to maintain service quality.</li>
+        <li>Assisted technicians with HVAC system installation, maintenance, and repair at client locations.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">BTL Samsung Supervisor</div>
+          <div class="card-sub">Samsung – Below the Line Promotions</div>
+        </div>
+        <span class="card-date">Jan 2022 – Aug 2024</span>
+      </div>
+      <ul>
+        <li>Supervised and coordinated promotional teams for Samsung mobile phones and devices.</li>
+        <li>Oversaw sales operations, enforced company policies, and monitored team performance metrics.</li>
+        <li>Trained promoters on product knowledge, sales techniques, and customer engagement strategies.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">Academic Background</div>
+  <div class="section-title">Education</div>
+  <div class="edu-grid">
+
+    <div class="edu-card">
+      <div class="edu-degree">Master of Professional Studies (MPS) in Informatics</div>
+      <div class="edu-school">Northeastern University – Toronto, Canada</div>
+      <div class="edu-date">Expected Graduation: March 2026</div>
+      <div class="edu-courses">Concentrations: Cloud Computing &nbsp;·&nbsp; Information Security Management &nbsp;·&nbsp; Data Analytics &nbsp;·&nbsp; Leading &amp; Managing Technical Projects</div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-degree">Bachelor of Arts in Integrated Development Studies</div>
+      <div class="edu-school">University for Development Studies</div>
+      <div class="edu-date">Sep 2015 – June 2019</div>
+      <div class="edu-courses">Coursework: Fundamentals of Planning &nbsp;·&nbsp; Development Planning Process &nbsp;·&nbsp; Managerial Economics &nbsp;·&nbsp; Project Planning &amp; Implementation</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Competencies</div>
+  <div class="section-title">Skills</div>
+  <div class="skills-grid">
+    <div class="skill-pill">AI Tools &amp; Research</div>
+    <div class="skill-pill">Content Analysis</div>
+    <div class="skill-pill">MS Office Suite</div>
+    <div class="skill-pill">SQL</div>
+    <div class="skill-pill">Data Analytics</div>
+    <div class="skill-pill">Cloud Computing</div>
+    <div class="skill-pill">Info Security</div>
+    <div class="skill-pill">Agile / Scrum</div>
+    <div class="skill-pill">Project Management</div>
+    <div class="skill-pill">Team Leadership</div>
+    <div class="skill-pill">Public Speaking</div>
+    <div class="skill-pill">Technical Writing</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Featured Work</div>
+  <div class="section-title">Projects</div>
+  <div class="proj-card">
+    <div class="proj-title">AI Identities Project</div>
+    <div class="proj-org">Northeastern University &nbsp;·&nbsp; March 2025 – June 2025</div>
+    <p class="proj-desc">Analyzed the concept of AI identities, focusing on how AI systems authenticate, represent, and adapt identities across digital platforms. Research contributed to broader discussions on AI governance, trust, and digital accountability in emerging technology environments.</p>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="section-label">Community &amp; Awards</div>
+  <div class="section-title">Leadership &amp; Recognition</div>
+  <div class="lead-list">
+    <div class="lead-item"><div class="lead-dot"></div>Deputy Editor in Chief – Editorial Board, National Union of Ghana Students</div>
+    <div class="lead-item"><div class="lead-dot"></div>Deputy Sports Chairman – Development Students Association, University for Development Studies</div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Mohammed Gadafi Nuhu &nbsp;·&nbsp; Toronto, ON &nbsp;·&nbsp; mohammedgaddafi245@gmail.com
+</footer>
+
+<script>
+function downloadPortfolio(){
+  const html = document.documentElement.outerHTML;
+  const blob = new Blob([html], {type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'Mohammed_Gadafi_Nuhu_Portfolio.html';
+  a.click();
+}
+</script>
+</body>
+</html>
