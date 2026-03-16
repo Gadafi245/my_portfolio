@@ -86,7 +86,9 @@
 </head>
 <body>
 
-<div class="dl-bar"><button class="dl-btn" onclick="downloadPortfolio()">&#8595; Download Portfolio (HTML)</button></div>
+<div class="dl-bar" style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap">
+  <button class="dl-btn" onclick="downloadPortfolio()">&#8595; Download Resume (gaddafi.doc)</button>
+</div>
 <nav>
   <div class="logo">MGN</div>
   <ul>
@@ -254,6 +256,97 @@
 </footer>
 
 <script>
+function downloadResume(){
+  const doc = `
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head><meta charset='utf-8'><style>
+  body{font-family:Calibri,sans-serif;font-size:11pt;color:#000;margin:2cm}
+  h1{font-size:18pt;font-weight:bold;margin:0 0 2pt}
+  h2{font-size:12pt;font-weight:bold;border-bottom:1pt solid #333;margin:14pt 0 4pt;text-transform:uppercase;letter-spacing:1pt}
+  .sub{font-size:10pt;color:#555;margin:0 0 6pt}
+  .contact{font-size:10pt;margin-bottom:10pt}
+  .job-title{font-weight:bold;font-size:11pt}
+  .employer{font-size:10pt;color:#c0392b;font-weight:bold}
+  .date{font-size:10pt;color:#555;float:right}
+  ul{margin:4pt 0 8pt 18pt;padding:0}
+  li{margin-bottom:2pt;font-size:10.5pt}
+  .clear{clear:both}
+  .skill-row{font-size:10.5pt;margin-bottom:4pt}
+</style></head>
+<body>
+<h1>MOHAMMED GADAFI NUHU</h1>
+<p class="contact">437-606-2524 &nbsp;|&nbsp; mohammedgaddafi245@gmail.com &nbsp;|&nbsp; Toronto, ON &nbsp;|&nbsp; linkedin.com/in/mohammed-nuhu-</p>
+
+<h2>Education</h2>
+<span class="date">Expected March 2026</span>
+<div class="job-title">Master of Professional Studies (MPS) in Informatics</div>
+<div class="employer">Northeastern University – Toronto, Canada</div>
+<div class="sub">Concentrations: Cloud Computing, Information Security Management, Data Analytics, Leading &amp; Managing Technical Projects</div>
+<div class="clear"></div>
+
+<span class="date">Sep 2015 – Jun 2019</span>
+<div class="job-title">Bachelor of Arts in Integrated Development Studies</div>
+<div class="employer">University for Development Studies</div>
+<div class="sub">Coursework: Fundamentals of Planning, Development Planning Process, Managerial Economics, Project Planning &amp; Implementation</div>
+<div class="clear"></div>
+
+<h2>Experience</h2>
+<span class="date">Nov 2025 – Present</span>
+<div class="job-title">AI Research / Content Analyst</div>
+<div class="employer">Outliner AI (Remote)</div>
+<div class="clear"></div>
+<ul>
+  <li>Researched and analyzed emerging AI tools, platforms, and technology trends to identify solutions for professionals and businesses.</li>
+  <li>Curated and summarized AI tools and industry insights for newsletters, reports, and digital content.</li>
+  <li>Evaluated AI systems to determine use cases, performance, and productivity benefits.</li>
+  <li>Created structured outlines and summaries to simplify complex AI concepts and technologies.</li>
+</ul>
+
+<span class="date">Sep 2024 – Oct 2025</span>
+<div class="job-title">Onsite Assistant</div>
+<div class="employer">Radiant Sole</div>
+<div class="clear"></div>
+<ul>
+  <li>Assisted with daily on-site operations, ensuring smooth coordination between staff and clients.</li>
+  <li>Addressed customer concerns and provided timely problem resolution to maintain service quality.</li>
+  <li>Assisted technicians with HVAC system installation, maintenance, and repair at client locations.</li>
+</ul>
+
+<span class="date">Jan 2022 – Aug 2024</span>
+<div class="job-title">BTL Samsung Supervisor</div>
+<div class="employer">Samsung – Below the Line Promotions</div>
+<div class="clear"></div>
+<ul>
+  <li>Supervised and coordinated promotional teams for Samsung mobile phones and devices.</li>
+  <li>Oversaw sales operations, ensured adherence to company policies, and monitored team performance.</li>
+  <li>Trained promoters on product knowledge, sales techniques, and customer engagement strategies.</li>
+</ul>
+
+<h2>Skills</h2>
+<div class="skill-row">&#8226; Strong Presentation and Interpersonal Skills &nbsp;&nbsp; &#8226; Competent in MS Office Package and SQL</div>
+<div class="skill-row">&#8226; Excellent Team Builder and Player &nbsp;&nbsp; &#8226; AI Research &amp; Content Analysis &nbsp;&nbsp; &#8226; Agile / Scrum &nbsp;&nbsp; &#8226; Data Analytics</div>
+
+<h2>Projects</h2>
+<span class="date">Mar 2025 – Jun 2025</span>
+<div class="job-title">AI Identities Project – Northeastern University</div>
+<div class="clear"></div>
+<ul>
+  <li>Analyzed the concept of AI identities, focusing on how AI systems authenticate, represent, and adapt identities across digital platforms.</li>
+</ul>
+
+<h2>Leadership &amp; Awards</h2>
+<ul>
+  <li>Deputy Editor in Chief – Editorial Board, National Union of Ghana Students</li>
+  <li>Deputy Sports Chairman – Development Students Association, University for Development Studies</li>
+</ul>
+</body></html>`;
+  const blob = new Blob([doc],{type:'application/msword'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'gaddafi.doc';
+  a.click();
+}
+
 function downloadPortfolio(){
   const html = document.documentElement.outerHTML;
   const blob = new Blob([html], {type:'text/html'});
